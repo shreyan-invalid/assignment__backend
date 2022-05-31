@@ -4,6 +4,14 @@ const getCollections = async (req, res, next) => {
   try {
     const userCollections = await Collection.find({
       "user.id": req.params.userId,
+      function (err, collections) {
+        if (err){
+            next(err);
+        }
+        else{
+            res.json({data: collections})
+        }
+      }
     });
     res.status(200).json({ data: userCollections });
   } catch (err) {
