@@ -54,11 +54,11 @@ app.use('/collection', collectionRoutes);
 
 app.use('/review', reviewRoutes);
  
-app.use('/', userRoutes); 
+app.use('/user', userRoutes);
+app.get('/', (req, res) => res.send("Hi"));
+
 
 app.listen(PORT, () => {
   console.log('Server is listening on Port:', PORT)
 })
 
-app.use('/user', userRoutes);
-app.get('/', (req, res) => res.send("Hi"));
