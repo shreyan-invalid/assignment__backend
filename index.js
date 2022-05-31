@@ -60,4 +60,5 @@ app.listen(PORT, () => {
   console.log('Server is listening on Port:', PORT)
 })
 
-app.use('/', userRoutes);
+app.use('/user', userRoutes);
+app.get('/', (req, res) => res.send("Hi"));
